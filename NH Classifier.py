@@ -23,5 +23,5 @@ s = pickle.loads(saved_model)
 st.header('News Headline Classifier')
 input = st.text_area("Please enter the news headline", value="")
 if st.button("Predict"):
-    v=vector.transform([headline]).toarray()
+    v=vector.transform([input]).toarray()
     st.write(str(list(s.predict(v))[0]).replace('0','TECH').replace('1','BUSINESS').replace('2','SPORTS').replace('3','ENTERTAINMENT').replace('4','POLITICS'))
